@@ -4,14 +4,13 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|email|integer|null: false, foreign_key: true|
-|passwaord|integer|null: false, foreign_key: true|
-|nickname|string|null: false, foreign_key: true|
+|email|string|null: false|
+|passwaord|string|null: false|
+|username|string|null: false|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+- has_many :chats
+- has_many :messge
 
 
 ## groups_usersテーブル
@@ -26,12 +25,11 @@
 - belongs_to :user
 
 
-## chatテーブル
+## chatsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|group|string|null: false, foreign_key: true|
+|group|string|foreign_key: true|
 |member|string|null: false, foreign_key: true|
 
 ### Association
