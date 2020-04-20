@@ -10,6 +10,7 @@
 - has_many :groups
 - has_many :messeges
 
+
 ## groups_usersテーブル
 
 |Column|Type|Options|
@@ -21,6 +22,21 @@
 - belongs_to :group
 - belongs_to :user
 
+
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|groupname|string|null: false, foreign_key: true|
+|membername|string|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :messege
+- has_many  :groups,  through:  :groups_users
+
+
 ## messegesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -31,22 +47,4 @@
 
 ### Association
 - belongs_to :user
-- has_many :users_tags
-- has_many  :tags,  through:  :users_tags
-
-## tagsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|username|string|null: false|
-### Association
-- has_many :users_tags
-- has_many  :users,  through:  :users_tags
-
-## users_tagsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|messeges_id|integer|null: false, foreign_key: true|
-|tag_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :tag
+- has_many :groups
