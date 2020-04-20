@@ -26,8 +26,8 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false, foreign_key: true|
-|membername|string|null: false, foreign_key: true|
+|groupname|string|null: false|
+|membername|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
