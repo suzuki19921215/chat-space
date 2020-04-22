@@ -26,10 +26,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
-|membername|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
 - belongs_to :user
@@ -37,7 +34,7 @@
 - has_many  :groups,  through:  :groups_users
 
 
-## messegesテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
