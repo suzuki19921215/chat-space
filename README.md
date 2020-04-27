@@ -30,18 +30,15 @@
 |name|string|null: false|
 
 ### Association
-- belongs_to :user
-- has_many  :messages,  through:  :groups_users
+- has_many :groups_users
 
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|foreign_key: true|
-|image|string|foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
-- has_many :group
+- belongs_to :group
